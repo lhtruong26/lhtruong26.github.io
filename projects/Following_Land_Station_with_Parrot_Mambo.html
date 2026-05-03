@@ -20,12 +20,14 @@
 
   <div class="header">
     <h1>Following Land Station with Parrot Mambo</h1>
+    <img src="../assets/images/drone_icon.jpg" class="header-icon">
   </div>
 
   <h2 class="section-title">Description</h2>
 
   <p>
     The goal of this project is to develop a drone that follows a line following robot by detecting the landing station on top of the car.
+  </p>
 
   <p>
     Begin by building the line follower robot kit. Build a landing platform using cardboard or styrofoam with dimensions of 11x11 inches. Cover the platform with RGB-colored paper or tape.
@@ -71,47 +73,49 @@
     If the line following robot is not available, a color line following program for the drone is also possible.
   </p>
 
-  <h2 class="section-title">Forward Kinematics</h2>
-
-  <img src="../assets/images/Robot_spec.png" width="300">
-  
-  <img src="../assets/images/Coordinate_system.png" width="300">
-
-  <img src="../assets/images/Transformation_matrices.png" width="300">
-  
-  <p>
-      After finding the transformation matrices, we write them in MATLAB to find the position and orientation of the end-effector.
-  </p>
-
-  <p>The final transformation matrix \( ^0H_6 \) is:</p>
+  <h2 class="section-title">Image Processing</h2>
 
   <p>
-    \[
-    \begin{bmatrix}
-    R & t \\
-    0 & 1
-    \end{bmatrix}
-    \]
+    To make the simulink model for this lab, we use Code Generation Template For Image Processing and Control from the Simulink Support Package for Parrot Minidrones.
   </p>
 
   <p>
-    Here, \( R \) represents the rotation matrix and \( t \) represents the translation vector. So we can find the position (x, y, z) of the end-effector by outputting \( t \).
+    In the Image Processing System, We change Parrot Image Conversion output from YUV to RGB. Then we take a photo of the object to be detected like below.
   </p>
 
-  <h2 class="section-title">Inverse Kinematics</h2>
-
-  <img src="../assets/images/Simscape.png" width="600">
+  <img src="../assets/images/color_block.png" width="600" style="display:block;">
 
   <p>
-    We use Matlab Inverse Kinematics Designer to solve this problem. 
-    We load the robots into Matlab, choose the BFGS Gradient solver algorithm, and enter our desired positions and orientations.
-  <p>
+    After that, we use the Color Thresholder app in Matlab to export a matlab code that will just find the block color. Repeat the steps for other colors.
+  </p>
 
-  <a class="btn" href="https://github.com/lhtruong26/Maze_Solving_with_myCobot_Pro_600" target="_blank">
-    GitHub Code
+  <img src="../assets/images/Color_Thresholder.png" width="600" style="display:block;">
+
+  <p>
+    Edit the color masking Matlab code if needed.
+  </p>
+
+  <img src="../assets/images/color_mask.png" width="600" style="display:block;">
+
+  <p>
+     Create model that head the block color and spin the motor when a certain number of color pixel is detected.
+  </p>
+
+  <img src="../assets/images/color_detect_model.png" width="600" style="display:block;">
+
+  <h2 class="section-title">Landing</h2>
+
+  <img src="../assets/images/landing_model.png" width="600" style="display:block;">
+
+  <a class="btn" href="../assets/files/Landing_Station_Following_Drone.slx" download>
+    Download Landing Station Following Code
   </a>
 
-  <a class="btn" href="../assets/docs/Project_Report.pdf" target="_blank">
+  <a class="btn" href="../assets/files/Line_Following_Drone.slx" download>
+    Download Line Following Code
+  </a>
+
+  <a class="btn" href="../assets/docs/Drone_Project_Report.pdf" target="_blank">
     View Full Report (PDF)
   </a>
 </div>

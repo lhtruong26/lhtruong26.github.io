@@ -58,6 +58,17 @@ body {
   margin: 0;
 }
 
+.header-content {
+  display: flex;
+  align-items: center; /* vertically align icon + text */
+  gap: 10px;           /* space between icon and text */
+}
+
+.header-icon {
+  width: 32px;   /* adjust size */
+  height: 32px;
+}
+
 img {
   margin-bottom: 20px;
 }
