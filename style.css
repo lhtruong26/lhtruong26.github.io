@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+/* Main content */
+.main {
+  margin-left: 240px;
+  padding: 30px;
+}
+
+/* Project grid */
+.grid {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  text-decoration: none;
+  color: black;
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
