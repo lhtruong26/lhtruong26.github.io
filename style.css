@@ -21,11 +21,20 @@ body {
   margin: 10px 0;
   padding: 10px 12px;
 
-  border: 1.5px solid #edd32c;   /* outline button */
+  border: 1.5px solid rgba(237, 211, 44, 0.4); /* dim yellow border */
   border-radius: 8px;
 
-  background: transparent;       /* no fill */
-  transition: all 0.2s ease;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.sidebar a:hover {
+  color: #ffffff;                         /* brighter text */
+  border-color: #edd32c;                  /* strong yellow */
+  background: rgba(237, 211, 44, 0.1);   /* soft glow fill */
+
+  box-shadow: 0 0 10px rgba(237, 211, 44, 0.7); /* glow effect */
+  transform: translateX(3px);             /* slight movement */
 }
 
 /* Main content */
