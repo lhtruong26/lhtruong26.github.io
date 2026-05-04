@@ -35,16 +35,27 @@ body {
 
 .card {
   width: 200px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;   /* important */
   text-decoration: none;
   color: black;
-  background: #f3f4f6;
-  padding: 10px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
 }
 
 .card img {
   width: 100%;
-  border-radius: 8px;
+  height: 140px;          /* fixed image area */
+  object-fit: cover;      /* crops instead of stretching */
+  display: block;
+}
+
+.card h3 {
+  padding: 10px;
+  margin: 0;
+  font-size: 16px;
 }
 
 .header {
@@ -68,6 +79,7 @@ body {
 .header-icon {
   width: 64px;   /* adjust size */
   height: 64px;
+  margin-bottom: 0; 
 }
 
 img {
