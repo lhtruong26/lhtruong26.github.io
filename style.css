@@ -19,6 +19,13 @@ body {
   color: white;
   text-decoration: none;
   margin: 10px 0;
+  padding: 10px 12px;
+
+  border: 1.5px solid #edd32c;   /* outline button */
+  border-radius: 8px;
+
+  background: transparent;       /* no fill */
+  transition: all 0.2s ease;
 }
 
 /* Main content */
@@ -43,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: 0.2s;
+  border: 1.5px solid #d1d5db;
 }
 
 .card img {
@@ -56,6 +64,10 @@ body {
   padding: 10px;
   margin: 0;
   font-size: 16px;
+}
+
+.card:hover {
+  border-color: #2c6bed;  /* turns blue on hover */
 }
 
 .header {
