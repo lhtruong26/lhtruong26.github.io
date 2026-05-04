@@ -13,7 +13,7 @@
   <h2>My Portfolio</h2>
   <a href="../index.html">Home</a>
   <a href="../projects/Maze_Solving_with_myCobot_Pro_600.html">Maze Solving with myCobot Pro 600</a>
-  <a href="../Following_Land_Station_with_Parrot_Mambo.html">Following Land Station with Parrot Mambo</a>
+  <a href="../projects/Following_Land_Station_with_Parrot_Mambo.html">Following Land Station with Parrot Mambo</a>
   <a href="Path_following_and_Sign_Recognition_in_Autonomous_Vehicles.html">Path Following and Sign Recognition in Autonomous Vehicles</a>
   <a href="../projects/Other.html">Other</a>
 </div>
@@ -47,72 +47,38 @@
 
   <img src="../assets/images/ROSmaster_Car_X3.png" width="300">
 
-  <h2 class="section-title">Station Landing Demonstration</h2>
+  <h2 class="section-title">Green Line Following</h2>
 
   <video width="600" controls>
-    <source src="../assets/videos/Cart_following.mp4">
+    <source src="../assets/videos/Green_line_following.mp4">
   </video>
 
-  <h2 class="section-title">Line Following</h2>
+  <h2 class="section-title">Blue Line Following</h2>
 
   <video width="600" controls>
-    <source src="../assets/videos/Line_following.mp4">
+    <source src="../assets/videos/Blue_line_following.mp4">
   </video>
 
   <h2 class="section-title">Work Summary</h2>
 
   <p>
-    This project uses Matlab and Simulink for computer vision and motor control.
+    This project uses ROS, Python, and OpenCV for computer vision, nodes communication, decision making, and robot control.
   </p>
 
   <p>
-    The work is divided into 3 main parts, building the line following robot with the landing station on top, color detection program, and planning execution for the drone flight.
+    The work is divided into 3 main parts, line following with pid control, sign recognition, and obstacle detection.
   </p>
+
+  <h2 class="section-title">Path Following with PID control</h2>
 
   <p>
-    If the line following robot is not available, a color line following program for the drone is also possible.
+    First, make sure camera and bringup are launched and that we have all the topic we need.
   </p>
 
-  <h2 class="section-title">Image Processing</h2>
+  <img src="../assets/images/camera_frame.png" width="600" style="display:block;">
 
-  <p>
-    To make the simulink model for this lab, we use Code Generation Template For Image Processing and Control from the Simulink Support Package for Parrot Minidrones.
-  </p>
-
-  <p>
-    In the Image Processing System, We change Parrot Image Conversion output from YUV to RGB. Then we take a photo of the object to be detected like below.
-  </p>
-
-  <img src="../assets/images/color_block.png" width="600" style="display:block;">
-
-  <p>
-    After that, we use the Color Thresholder app in Matlab to export a matlab code that will just find the block color. Repeat the steps for other colors.
-  </p>
-
-  <img src="../assets/images/Color_Thresholder.png" width="600" style="display:block;">
-
-  <p>
-    Edit the color masking Matlab code if needed.
-  </p>
-
-  <img src="../assets/images/color_mask.png" width="600" style="display:block;">
-
-  <p>
-     Create model that head the block color and spin the motor when a certain number of color pixel is detected.
-  </p>
-
-  <img src="../assets/images/color_detect_model.png" width="600" style="display:block;">
-
-  <h2 class="section-title">Landing</h2>
-
-  <img src="../assets/images/landing_model.png" width="600" style="display:block;">
-
-  <a class="btn" href="../assets/files/Landing_Station_Following_Drone.slx" download>
-    Download Landing Station Following Code
-  </a>
-
-  <a class="btn" href="../assets/files/Line_Following_Drone.slx" download>
-    Download Line Following Code
+  <a class="btn" href="../assets/files/Path_Following_and_Sign_Recognition.py" download>
+    Download Code
   </a>
 
   <a class="btn" href="../assets/docs/Drone_Project_Report.pdf" target="_blank">
