@@ -16,6 +16,14 @@
   <a href="../projects/Following_Land_Station_with_Parrot_Mambo.html">Following Land Station with Parrot Mambo</a>
   <a href="Path_following_and_Sign_Recognition_in_Autonomous_Vehicles.html">Path Follow & Sign Recognition in Autonomous Vehicles</a>
   <a href="../projects/Other.html">Other</a>
+  <div class="dropdown">
+    <a class="dropdown-btn">Other ▾</a>
+    <div class="dropdown-content">
+      <a href="../projects/Control.html">Control</a>
+      <a href="../projects/Mechatronics.html">Mechatronics</a>
+      <a href="../projects/Simulation.html">Simulation</a>
+    </div>
+  </div>
 </div>
 
 <div class="main">
@@ -69,13 +77,29 @@
     The work is divided into 3 main parts, line following with pid control, sign recognition, and obstacle detection.
   </p>
 
-  <h2 class="section-title">Path Following with PID control</h2>
+  <h2 class="section-title">Path Following with PID Control</h2>
 
   <p>
     First, make sure camera and bringup are launched and that we have all the topic we need.
   </p>
 
+  <p>
+    Then, we develop the line following pid control node.
+  </p>
+
   <img src="../assets/images/camera_frame.png" width="600" style="display:block;">
+
+  <h2 class="section-title">Sign Recognition</h2>
+
+  <p>
+    For the second node, we write an algorithm that read the camera image, reconizing the color or traffic sign in order to output appropriate message to the /cmd_vel topic.
+  </p>
+
+  <img src="../assets/images/Red_Sign_Stop.png" width="600" style="display:block;">
+
+  <p>
+    Finally, we build a node that read the message from the /laser topic, telling the robot to stop, fall back, or take some kind of avoiding behavior if an oject is detected within a certain distance from the robot by the Lidar.
+  </p>
 
   <a class="btn" href="../assets/files/Path_Following_and_Sign_Recognition.py" download>
     Download Code
