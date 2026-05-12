@@ -231,3 +231,7 @@ video {
   box-shadow: 0 0 8px rgba(44, 107, 237, 0.5);
 }
 
+.portfolio-title {
+  color: white;
+  text-decoration: none;
+}
