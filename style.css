@@ -12,6 +12,10 @@ body {
   height: 100vh;
   padding: 20px;
   position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar a {
@@ -35,6 +39,12 @@ body {
 
   box-shadow: 0 0 10px rgba(237, 211, 44, 0.7); /* glow effect */
   transform: translateX(3px);             /* slight movement */
+}
+
+.sidebar-icons {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 10px;
 }
 
 /* Main content */
@@ -188,3 +198,36 @@ video {
   padding-left: 12px;
   border-color: rgba(237, 211, 44, 0.3); /* dimmer than parent */
 }
+
+.skill-group {
+  margin-bottom: 20px;
+}
+
+.skill-group h3 {
+  color: #0f5132;
+  margin-bottom: 10px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  background: #f3f4f6;
+  border: 1.5px solid #2c6bed;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #111827;
+
+  transition: 0.2s;
+}
+
+.skill-tags span:hover {
+  background: #2c6bed;
+  color: white;
+  box-shadow: 0 0 8px rgba(44, 107, 237, 0.5);
+}
+
