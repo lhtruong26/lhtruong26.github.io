@@ -50,17 +50,44 @@
     Add features for the robot operation, including obstacle avoidance, sign recognition, speed control.
   </p>
 
+  <h2 class="section-title">Personal task</h2>
+
+  <p>
+    This project was done in a team of six.
+  </p>
+  
+  <p>
+    In this project, I worked on developing a ROS node that read drive the robot to follow the color line with PID control.
+  </p>
+
+  <p>
+    I also supported system integration, testing, and debugging to ensure the functionality of the robot.
+  </p>
+
+
   <h2 class="section-title">Equipment</h2>
+
+  <p>
+    This was the special equipments that we used for the projects.
+  </p>
 
   <img src="../assets/images/ROSmaster_Car_X3.png" width="300">
 
-  <h2 class="section-title">Green Line Following</h2>
+  <h2 class="section-title">Green Line Following Demonstration</h2>
+
+  <p>
+    The video below was our project result, demonstrating the car following green line.
+  </p>
 
   <video width="600" controls>
     <source src="../assets/videos/Green_line_following.mp4">
   </video>
 
-  <h2 class="section-title">Blue Line Following</h2>
+  <h2 class="section-title">Blue Line Following Demonstration</h2>
+
+  <p>
+    The video below was our project result, demonstrating the car following blue line.
+  </p>
 
   <video width="600" controls>
     <source src="../assets/videos/Blue_line_following.mp4">
@@ -69,21 +96,69 @@
   <h2 class="section-title">Work Summary</h2>
 
   <p>
-    This project uses ROS, Python, and OpenCV for computer vision, nodes communication, decision making, and robot control.
+    In this project, I used ROS, Python, and OpenCV for computer vision, nodes communication, decision making, and robot control.
   </p>
 
   <p>
-    The work is divided into 3 main parts, line following with pid control, sign recognition, and obstacle detection.
+    The project was divided into 3 main parts, line following with pid control, sign recognition, and obstacle detection.
   </p>
 
   <h2 class="section-title">Path Following with PID Control</h2>
 
   <p>
-    First, make sure camera and bringup are launched and that we have all the topic we need.
+    First, I made sure the camera and bringup nodes were launched correctly and that all required topics were available.
   </p>
 
   <p>
-    Then, we develop the line following pid control node.
+    Then, I developed the line-following PID control node to keep the robot centered on the path.
+  </p>
+
+  <p>
+    I used the image topic <code>/camera/rgb/image_raw</code> and confirmed that the encoding is <code>rgb8</code>.
+  </p>
+
+  <p>
+    The image was processed to detect the colored line, and the line position was compared to the center of the camera frame.
+    The position error was calculated as:
+  </p>
+
+  <p>
+    \[
+    error = cx - \frac{w}{2}
+    \]
+  </p>
+
+  <p>
+    where <code>cx</code> is the x-coordinate of the detected line centroid, and <code>w</code> is the image width.
+    This error was then used in the PID equation:
+  </p>
+
+  <p>
+    \[
+    u(t) = K_p e(t) + K_i \int e(t)\,dt + K_d \frac{de(t)}{dt}
+    \]
+  </p>
+
+  <p>
+    In discrete form, the control output was computed as:
+  </p>
+
+  <p>
+    \[
+    angular\_z = K_p e + K_i \sum e + K_d (e - e_{prev})
+    \]
+  </p>
+
+  <p>
+    The proportional term (<code>Kp</code>) controlled how strongly the robot corrected its direction based on the current error. Increasing <code>Kp</code> improved responsiveness and allowed the robot to react more aggressively to sharp curves. However, setting <code>Kp</code> too high caused oscillation and unstable movement.
+  </p>
+
+  <p>
+    The derivative term (<code>Kd</code>) reduced overshoot by considering how quickly the error changed between frames. Increasing <code>Kd</code> helped smooth the turning behavior and improved stability when entering or exiting curves.
+  </p>
+
+  <p>
+    The integral term (<code>Ki</code>) accumulated error over time. In this project, increasing <code>Ki</code> was not effective because the visual error from the camera changed rapidly as the robot moved through curves and varying lighting conditions. A larger <code>Ki</code> caused accumulated error to persist even after the robot had already corrected its direction, resulting in overshoot and unstable steering behavior.
   </p>
 
   <img src="../assets/images/camera_frame.png" width="600" style="display:block;">
@@ -91,13 +166,21 @@
   <h2 class="section-title">Sign Recognition</h2>
 
   <p>
-    For the second node, we write an algorithm that read the camera image, reconizing the color or traffic sign in order to output appropriate message to the /cmd_vel topic.
+    For the second node, we wrote an algorithm that read the camera, recognizing the color or traffic sign in order to output appropriate message to the /cmd_vel topic.
   </p>
 
   <img src="../assets/images/Red_Sign_Stop.png" width="600" style="display:block;">
 
+  <h2 class="section-title">Obstacle detection</h2>
+
   <p>
-    Finally, we build a node that read the message from the /laser topic, telling the robot to stop, fall back, or take some kind of avoiding behavior if an oject is detected within a certain distance from the robot by the Lidar.
+    Meanwhile, we also built a node that read the message from the /laser topic, telling the robot to stop, fall back, or take some kind of avoiding behavior if an oject is detected within a certain distance from the robot by the Lidar.
+  </p>
+
+  <h2 class="section-title">System integration</h2>
+
+  <p>
+    Finally, we made sure that all the node worked together and that the robot behaved as expected.
   </p>
 
   <a class="btn" href="../assets/files/Path_Following_and_Sign_Recognition.py" download>

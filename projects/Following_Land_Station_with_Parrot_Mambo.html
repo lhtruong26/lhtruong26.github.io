@@ -52,17 +52,29 @@
 
   <h2 class="section-title">Equipment</h2>
 
+  <p>
+    These were the special equipments that I used for the projects.
+  </p>
+
   <img src="../assets/images/parrot_mambo.jpg" width="300">
   
   <img src="../assets/images/line_follow_robot.jpg" width="300">
 
   <h2 class="section-title">Station Landing Demonstration</h2>
 
+  <p>
+    The video below was my project result, demonstrating the car following the line with the landing station on top of it while the drone tracking the tration to descent on it.
+  </p>
+
   <video width="600" controls>
     <source src="../assets/videos/Cart_following.mp4">
   </video>
 
-  <h2 class="section-title">Line Following</h2>
+  <h2 class="section-title">Line Following Demonstration</h2>
+
+  <p>
+    The video below was my project result, demonstrating the drone following the line.
+  </p>
 
   <div class="video-container">
     <iframe
@@ -75,48 +87,52 @@
   <h2 class="section-title">Work Summary</h2>
 
   <p>
-    This project uses Matlab and Simulink for computer vision and motor control.
+    In this project, I used Matlab and Simulink for computer vision and motor control.
   </p>
 
   <p>
-    The work is divided into 3 main parts, building the line following robot with the landing station on top, color detection program, and planning execution for the drone flight.
+    The work was divided into 3 main parts, building the line following robot with the landing station on top, color detection program, and planning execution for the drone flight.
   </p>
 
   <p>
-    If the line following robot is not available, a color line following program for the drone is also possible.
+    If the line following robot was not available, a color line following program for the drone was also possible.
   </p>
 
   <h2 class="section-title">Image Processing</h2>
 
   <p>
-    To make the simulink model for this lab, we use Code Generation Template For Image Processing and Control from the Simulink Support Package for Parrot Minidrones.
+    To make the simulink model for this lab, I used Code Generation Template For Image Processing and Control from the Simulink Support Package for Parrot Minidrones.
   </p>
 
   <p>
-    In the Image Processing System, We change Parrot Image Conversion output from YUV to RGB. Then we take a photo of the object to be detected like below.
+    In the Image Processing System, I changed Parrot Image Conversion output from YUV to RGB. Then I took a photo of the object to be detected like below.
   </p>
 
   <img src="../assets/images/color_block.png" width="600" style="display:block;">
 
   <p>
-    After that, we use the Color Thresholder app in Matlab to export a matlab code that will just find the block color. Repeat the steps for other colors.
+    After that, I used the Color Thresholder app in Matlab to export a matlab code that would just find the block color. I repeated the steps for other colors.
   </p>
 
   <img src="../assets/images/Color_Thresholder.png" width="600" style="display:block;">
 
   <p>
-    Edit the color masking Matlab code if needed.
+    I edited the color masking Matlab code if needed.
   </p>
 
   <img src="../assets/images/color_mask.png" width="600" style="display:block;">
 
   <p>
-     Create model that head the block color and spin the motor when a certain number of color pixel is detected.
+     I created a Simulink model that would read the block color and spin the motor when a certain number of color pixel was detected.
   </p>
 
   <img src="../assets/images/color_detect_model.png" width="600" style="display:block;">
 
   <h2 class="section-title">Landing</h2>
+
+  <p>
+     I made a Simulink model for landing like below.
+  </p>
 
   <img src="../assets/images/landing_model.png" width="600" style="display:block;">
 
