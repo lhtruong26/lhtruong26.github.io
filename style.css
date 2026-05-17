@@ -18,7 +18,7 @@ body {
   justify-content: space-between;
 }
 
-.sidebar a {
+.sidebar > div > a {
   display: block;
   color: white;
   text-decoration: none;
