@@ -18,7 +18,7 @@ body {
   justify-content: space-between;
 }
 
-.sidebar > div > a {
+.sidebar .nav-link {
   display: block;
   color: white;
   text-decoration: none;
@@ -32,19 +32,32 @@ body {
   transition: all 0.25s ease;
 }
 
-.sidebar a:hover {
-  color: #ffffff;                         /* brighter text */
-  border-color: #edd32c;                  /* strong yellow */
-  background: rgba(237, 211, 44, 0.1);   /* soft glow fill */
+/* Main sidebar buttons */
+.sidebar .nav-link:hover,
+.dropdown-btn:hover,
+.dropdown-content a:hover {
 
-  box-shadow: 0 0 10px rgba(237, 211, 44, 0.7); /* glow effect */
-  transform: translateX(3px);             /* slight movement */
+  color: #ffffff;
+  border-color: #edd32c;
+  background: rgba(237, 211, 44, 0.1);
+
+  box-shadow: 0 0 10px rgba(237, 211, 44, 0.7);
+  transform: translateX(3px);
 }
 
 .sidebar-icons {
   display: flex;
   gap: 12px;
   padding-bottom: 10px;
+}
+
+.sidebar-icons a:hover {
+  border-color: #edd32c;
+  background: rgba(237, 211, 44, 0.1);
+
+  box-shadow: 0 0 10px rgba(237, 211, 44, 0.7);
+
+  transform: translateY(-2px);
 }
 
 /* Main content */
@@ -199,6 +212,20 @@ video {
   border-color: rgba(237, 211, 44, 0.3); /* dimmer than parent */
 }
 
+.dropdown-btn {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px 12px;
+
+  border: 1.5px solid rgba(237, 211, 44, 0.4);
+  border-radius: 8px;
+
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
 .skill-group {
   margin-bottom: 20px;
 }
@@ -234,4 +261,13 @@ video {
 .portfolio-title {
   color: white;
   text-decoration: none;
+}
+
+.portfolio-title:hover {
+  color: white;
+  text-decoration: none;
+
+  background: none;
+  box-shadow: none;
+  transform: none;
 }
